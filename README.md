@@ -94,18 +94,15 @@ SELECT * FROM production.Orders;
 
 **1.4.2. SQL queries to create table analysis.dm_rfm_segments.**
 
-#
+```SQL
 create table analysis.dm_rfm_segments (
 	user_id int NOT NULL PRIMARY KEY,
     recency int NOT NULL CHECK(recency >= 1 AND recency <= 5)
 	frequency int NOT NULL CHECK(frequency >= 1 AND frequency <= 5)
 	monetary_value int NOT NULL CHECK(monetary_value >= 1 AND monetary_value <= 5)
-);
+);```SQL
 
-#
-
-#
-
+```SQL
 insert into analysis.dm_rfm_segments 
 with o as (
 	select o.user_id, o.order_ts, o.payment
@@ -140,7 +137,6 @@ recency as
 	
 SELECT uo.id as "user_id",   
 
-#
 	recency.recency,
 	frequency.frequency,
 	monetary.monetary_value
@@ -148,6 +144,6 @@ from uo
 join frequency on frequency.count_orders = uo.count_orders
 join recency on recency.date_last_order = uo.date_last_order
 join monetary on monetary.sum_payment = uo.sum_payment
-
+```SQL
 
 
