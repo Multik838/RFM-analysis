@@ -94,6 +94,7 @@ SELECT * FROM production.Orders;
 
 **1.4.2. SQL queries to create table analysis.dm_rfm_segments.**
 
+```
 create table analysis.dm_rfm_segments (
 	user_id int NOT NULL PRIMARY KEY,
     recency int NOT NULL CHECK(recency >= 1 AND recency <= 5)
