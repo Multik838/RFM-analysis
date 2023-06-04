@@ -41,14 +41,15 @@ The order statuses table. Fields used: id(int type) - order status identifier, k
 The orders table. Fields used: user_id(int type) - user ID, order_ts(timestamp type) - date and time of the order, payment(numeric(19,5)) - amount of payment for the order.
 
 ###  1.3. Качество данных
-Table	View for analytics	Object	Tools/Connection	description
-production.users	analysis.users	id int NOT NULL PRIMARY KEY	Первичный ключ	Обеспечивает уникальность записей о пользователях
-production.orderstatuses	analysis.orderstatuses	id int NOT NULL PRIMARY KEY	Первичный ключ	Обеспечивает уникальность записей о пользователях
-production.orderstatuses	analysis.orderstatuses	key varchar(255) NOT NULL	NOT NULL	Обеспечивает отсутствие пустых значений поля ключа статуса заказа
-production.orders	analysis.orders	id int NOT NULL PRIMARY KEY	Первичный ключ	Обеспечивает уникальность записей о заказах
-production.orders	analysis.orders	status varchar(255) NOT NULL	NOT NULL	Обеспечивает отсутствие пустых значений поля ключа статуса заказа
-production.orders	analysis.orders	user_id int NOT NULL	NOT NULL	Обеспечивает отсутствие пустых значений поля идентификатора пользователя
-production.orders	analysis.orders	order_ts timestamp NOT NULL	NOT NULL	Обеспечивает отсутствие пустых значений поля даты заказа
-![image](https://github.com/Multik838/RFM-analysis/assets/69846294/5fd4a4ae-e0f2-491f-b717-659bf26fa1db)
+ |    Table      |    View for analytics   |   Object   |  Tools/Connection    |  description    | 
+ | ------------- | ----------------------- | ---------- | -------------------- | --------------- |
+ | production.users | analysis.users | id int NOT  | PRIMARY KEY | Первичный ключ	Обеспечивает уникальность записей о пользователях |
+ | production.orderstatuses | analysis.orderstatuses | id int NOT NULL | PRIMARY KEY | Первичный ключ	Обеспечивает уникальность записей о пользователях |
+ | production.orderstatuses | analysis.orderstatuses | key varchar(255) NOT NULL | NOT NULL | Обеспечивает отсутствие пустых значений поля ключа статуса заказа |
+ | production.orders | analysis.orders | id int NOT NULL | PRIMARY KEY | Первичный ключ	Обеспечивает уникальность записей о заказах |
+ | production.orders | analysis.orders | status varchar(255) NOT NULL | NOT NULL | Обеспечивает отсутствие пустых значений поля ключа статуса заказа |
+ | production.orders | analysis.orders | user_id int NOT NULL | NOT NULL | Обеспечивает отсутствие пустых значений поля идентификатора пользователя  |
+ | production.orders | analysis.orders | order_ts timestamp NOT NULL | NOT NULL | Обеспечивает отсутствие пустых значений поля даты заказа           | 
+
 
 
